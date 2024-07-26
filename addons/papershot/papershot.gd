@@ -28,7 +28,7 @@ func take_screenshot() -> Error:
     var path: String = _get_path()
     var image: Image = get_viewport().get_texture().get_image()
 
-    var err: Error = image.save_jpg(path)
+    var err: Error = image.save_jpg(path, 0.9)
     if err:
         io_error.emit(err, path)
     else:
