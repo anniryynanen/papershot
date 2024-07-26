@@ -13,7 +13,7 @@ signal io_error(error: Error, path: String)
 
 
 func _input(event: InputEvent) -> void:
-    if not shortcut or folder.is_empty():
+    if not shortcut:
         return
 
     for shortcut_event: InputEvent in shortcut.events:
