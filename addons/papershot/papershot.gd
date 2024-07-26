@@ -1,14 +1,17 @@
 extends Node2D
+## A node that takes screenshots of its viewport.
 
 signal screenshot_saved(image: Image, path: String)
 signal io_error(error: Error, path: String)
 
+## Folder to save screenshots in.
 @export var folder: String:
     set(value):
         folder = value
         if not folder.ends_with("/"):
             folder += "/"
 
+## Shortcut for taking a screenshot.
 @export var shortcut: Shortcut
 
 
