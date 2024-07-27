@@ -1,4 +1,6 @@
-extends Node2D
+@icon("res://addons/papershot/papershot.svg")
+class_name Papershot
+extends Node
 ## A node that takes screenshots of its viewport.
 
 signal screenshot_saved(image: Image, path: String)
