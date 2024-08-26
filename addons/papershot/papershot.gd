@@ -27,7 +27,7 @@ const PNG = FileFormat.PNG
 @export var shortcut: Shortcut
 
 ## Format to save screenshots in.
-@export var file_format: FileFormat = JPG
+@export var file_format := JPG
 
 
 func _input(event: InputEvent) -> void:
@@ -43,8 +43,8 @@ func _input(event: InputEvent) -> void:
 
 
 func take_screenshot() -> Error:
-    var path: String = _get_path()
-    var image: Image = get_viewport().get_texture().get_image()
+    var path := _get_path()
+    var image := get_viewport().get_texture().get_image()
 
     var err: Error
     match file_format:
@@ -59,8 +59,8 @@ func take_screenshot() -> Error:
 
 
 func _get_path() -> String:
-    var datetime: String = Time.get_datetime_string_from_system(false, true).replace(":", "-")
-    var millis: String = str(roundi(fmod(Time.get_unix_time_from_system(), 1.0) * 1000.0))
+    var datetime := Time.get_datetime_string_from_system(false, true).replace(":", "-")
+    var millis := str(roundi(fmod(Time.get_unix_time_from_system(), 1.0) * 1000.0))
 
     var extension: String
     match file_format:
